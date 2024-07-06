@@ -27,6 +27,15 @@ export const Hookform = () => {
        <td> {errors?.lname && <span>{errors.lname.message}</span> }</td>
         </tr>
         <tr>
+        <td><label>Gender</label></td>
+       <input type='radio' {...register('Gender', {required:'Select the Gender'})} name='gender' value="Male"></input>
+        <label htmlFor='male'>Male</label><br/>
+        <input type='radio' {...register('Gender', {required:'Select the Gender'})}  name='gender' value="Female"></input>
+        <label htmlFor='Female'>Female</label><br/>
+        <input type='radio'{...register('Gender', {required:'Select the Gender'})} name='gender' value="Other"></input>
+        <label htmlFor='Other'>Other</label><br/>
+         </tr>
+        <tr>
         <td><label>Email Id</label></td>
         <td><input{...register('email', {required:'Enter Email id', pattern: {
         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -55,7 +64,11 @@ export const Hookform = () => {
 
          <input type='submit'  className='submit'/>
 
+
+
+
         </form>
+        
     </div>
     
   )
